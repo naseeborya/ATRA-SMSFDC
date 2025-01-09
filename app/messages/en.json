@@ -1,0 +1,44 @@
+{
+  "landing-page": {
+    "brand-name": "ATRA",
+    "brand-desc-one": "Afghanistan Telecom",
+    "brand-desc-two": "Regulatory Authority",
+    "about-brand": "The Afghanistan Telecom Regulatory Authority (ATRA), founded in 2006, regulates the telecom sector, promotes private investment, and ensures nationwide access to telecom and internet services. It manages licenses, allocates spectrum, monitors compliance, protects consumer rights, and resolves disputes to maintain fair competition. ATRA’s vision is a competitive telecom market connecting Afghanistan to the world with affordable and accessible ICT services.",
+    "available-forms": "Available Forms",
+    "base-station": "Base Station",
+    "fixed-base-station": "Fixed/Base Station",
+    "equipment": "Equipment",
+    "frequency": "Frequency",
+    "antena": "Antena"
+  },
+  "admin-navigation": {
+    "dashboard": "Dashboard",
+    "requested-form": "Requested Forms",
+    "form-management": "Form Management",
+    "client-registration": "Client Registration",
+    "user-admin": "User Admin",
+    "logout": "Logout",
+    "atra-admin": "ATRA Admin",
+    "sms": "SMS For DC"
+  },
+  "admin-header": {
+    "welcome": "Welcome, User Name",
+    "role": "Admin"
+  },
+  "admin-dasboard-cards": {
+    "submittedforms": "Submitted Forms",
+    "aprovedforms": "Aproved Forms",
+    "pendingforms": "Pending Forms",
+    "rejectedforms": "Rejected Forms"
+  },
+  "admin-dashboard-graphs": {
+    "daily-visitor": "Daily Visitors",
+    "monthly-visitor": "Monthly Visitors"
+  },
+  "client-navigation": {
+    "forms": "Forms",
+    "submitted-form": "Submitted Form",
+    "profile": "Profile",
+    "logout": "Logout"
+  }
+}
