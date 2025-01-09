@@ -61,6 +61,8 @@ export default function Instructions() {
                 {step.icon}
               </div>
               {/* Content Section */}
+
+              {/* my changes */}
               <div
                 className={`w-2/3 p-4  ${
                   index % 2 === 0 ? "text-left" : "text-left"
