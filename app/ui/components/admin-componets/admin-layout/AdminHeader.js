@@ -45,10 +45,13 @@ function AdminHeader() {
         {/* Language Dropdown */}
         <div className="relative" ref={dropdownRef}>
           <div
-            className="text-brand-primary border-1 border-brand-primary p-3 rounded-xl hover:bg-brand-secondary hover:text-white hover:border-brand-secondary cursor-pointer"
+            className=" group relative text-brand-primary border-1 border-brand-primary p-3 rounded-xl hover:bg-brand-secondary hover:text-white hover:border-brand-secondary cursor-pointer"
             onClick={toggleDropdown}
           >
             <GrLanguage size={20} />
+            <div className=" absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 bg-brand-secondary text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center group-hover:bg-white group-hover:text-brand-secondary ">
+              <span className=" ">En</span>
+            </div>
           </div>
           {isDropdownOpen && (
             <div className="absolute mt-2 w-20 bg-white border border-brand-light rounded-2xl right-[-50%] shadow-lg z-10">
@@ -77,8 +80,11 @@ function AdminHeader() {
         </div>
 
         {/* Notification Icon */}
-        <div className="text-brand-primary border-1 border-brand-primary p-3 rounded-xl hover:bg-brand-secondary hover:text-white hover:border-brand-secondary">
+        <div className="group relative text-brand-primary border-1 border-brand-primary p-3 rounded-xl hover:bg-brand-secondary hover:text-white hover:border-brand-secondary">
           <IoNotificationsOutline size={20} />
+          <div className=" absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 bg-brand-secondary group-hover:bg-white group-hover:text-brand-secondary text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center  ">
+            <span className=" ">10</span>
+          </div>
         </div>
       </div>
     </header>

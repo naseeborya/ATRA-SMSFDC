@@ -102,12 +102,14 @@ export default function RequestedForms({ params }) {
       <div dir="ltr" className="flex items-center justify-between mb-4">
         <div className="relative" ref={filterDropdownRef}>
           <button onClick={toggleDropdown}>
-            <div className="text-center space-x-2 flex text-brand-primary p-4 rounded-2xl bg-white border border-brand-light">
+            <div className=" group text-center space-x-2 flex text-brand-primary p-4 rounded-2xl bg-white border border-brand-light hover:bg-brand-secondary ">
               <TbFilterCog
                 strokeWidth={1}
-                className="text-brand-primary text-2xl"
+                className="text-brand-primary group-hover:text-white text-2xl "
               />
-              <p className="text-base font-normal">Filter</p>
+              <p className="text-base font-normal group-hover:text-white">
+                Filter
+              </p>
             </div>
           </button>
           {isDropdownVisible && (
