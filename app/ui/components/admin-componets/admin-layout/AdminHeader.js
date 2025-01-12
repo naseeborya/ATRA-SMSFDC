@@ -6,18 +6,26 @@ import { GlobalBox } from "@/app/lib/constants/global-classes";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { GrLanguage } from "react-icons/gr";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 function AdminHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
+  const router = useRouter();
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
   const selectLanguage = (language) => {
+    const currentPath = window.location.pathname; // Get the current URL path
+    const newLocale = language.toLowerCase(); // Convert language to lowercase (e.g., "en", "ps", "fa")
+
+    // Construct the new URL with the updated locale
+    const newPath = `/${newLocale}${currentPath.replace(/^\/(en|ps|fa)/, "")}`;
+
+    router.push(newPath); // Navigate to the new URL
     console.log(`Selected language: ${language}`);
-    setIsDropdownOpen(false);
+    setIsDropdownOpen(false); // Close the dropdown
   };
 
   const handleClickOutside = (event) => {
@@ -58,21 +66,21 @@ function AdminHeader() {
               <ul className="p-2 space-y-1">
                 <li
                   className="text-sm text-brand-primary cursor-pointer hover:bg-gray-100 p-2 rounded-xl"
-                  onClick={() => selectLanguage("English")}
+                  onClick={() => selectLanguage("en")}
                 >
                   English
                 </li>
                 <li
                   className="text-sm text-brand-primary cursor-pointer hover:bg-gray-100 p-2 rounded-xl"
-                  onClick={() => selectLanguage("Pashto")}
+                  onClick={() => selectLanguage("ps")}
                 >
                   Pashto
                 </li>
                 <li
                   className="text-sm text-brand-primary cursor-pointer hover:bg-gray-100 p-2 rounded-xl"
-                  onClick={() => selectLanguage("Farsi")}
+                  onClick={() => selectLanguage("fa")}
                 >
-                  Farsi
+                  Dari
                 </li>
               </ul>
             </div>
