@@ -7,13 +7,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import requestedTable from "@/app/lib/constants/requested-table";
-
-import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
+import { AiOutlineDelete } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
+import { GrView } from "react-icons/gr";
+import { useTranslations } from "next-intl";
 
 export default function RequestedForms({ params }) {
   const resolvedParams = use(params); // Unwrap the params Promise
   const locale = resolvedParams?.locale || "en"; // Safely access `locale` with a fallback
-
+  const t = useTranslations("operation-lables");
   // alert(locale);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -242,21 +244,21 @@ export default function RequestedForms({ params }) {
                           } mt-[-40%] w-auto bg-white border border-gray-300 shadow-lg rounded-2xl z-10`}
                           style={{ overflow: "visible" }}
                         >
-                          <ul className="flex items-start justify-center p-1 space-x-2">
+                          <ul className="flex items-center justify-center p-1 gap-1">
                             {[
                               {
-                                icon: <FaEdit />,
-                                label: "Edit",
+                                icon: <FiEdit />,
+                                label: t("edit"),
                                 action: handleEdit,
                               },
                               {
-                                icon: <FaTrash />,
-                                label: "Delete",
+                                icon: <AiOutlineDelete />,
+                                label: t("delete"),
                                 action: handleDelete,
                               },
                               {
-                                icon: <FaEye />,
-                                label: "View",
+                                icon: <GrView />,
+                                label: t("view"),
                                 action: handleView,
                               },
                             ].map(({ icon, label, action }, index) => (
@@ -267,7 +269,7 @@ export default function RequestedForms({ params }) {
                               >
                                 <div className="text-lg">{icon}</div>
                                 {/* Tooltip */}
-                                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-brand-secondary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                   {label}
                                 </span>
                               </li>

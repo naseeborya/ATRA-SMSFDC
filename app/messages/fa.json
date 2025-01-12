@@ -38,6 +38,12 @@
     "monthly-visitor": "بیننده ماهانه"
   },
 
+  "operation-lables": {
+    "view": "دیدن",
+    "delete": "حذف کردن",
+    "edit": "اصلاح کردن"
+  },
+
   "client-navigation": {
     "forms": "فورمها",
     "submitted-form": "فورمهای درخواستی",

@@ -35,6 +35,11 @@
     "daily-visitor": "Daily Visitors",
     "monthly-visitor": "Monthly Visitors"
   },
+  "operation-lables": {
+    "view": "View",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
   "client-navigation": {
     "forms": "Forms",
     "submitted-form": "Submitted Form",

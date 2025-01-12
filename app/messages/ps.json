@@ -37,6 +37,12 @@
     "monthly-visitor": "میاشتني ليدونکي"
   },
 
+  "operation-lables": {
+    "view": "کتل",
+    "delete": "له منځه وړل",
+    "edit": "کره کول"
+  },
+
   "client-navigation": {
     "forms": "فورمونه",
     "submitted-form": "را لېږل شوي فورمونه",
