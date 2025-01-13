@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React from "react";
 
-function SubHero() {
+function SubHero({ locale }) {
   const t = useTranslations("landing-page");
   return (
     <div className="px-[256px] py-14 bg-white">
@@ -11,8 +11,8 @@ function SubHero() {
       </p>
 
       <Link
-        href="/login"
-        className=" bg-brand-secondary text-white px-8 py-3 rounded hover:bg-brand-primary transition duration-300"
+        href={"/" + locale + "/login"}
+        className=" bg-brand-secondary text-white px-8 py-4 rounded-xl hover:bg-brand-primary transition duration-300"
       >
         Sign in
       </Link>

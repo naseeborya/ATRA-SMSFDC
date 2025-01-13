@@ -7,12 +7,13 @@ import AvailableForms from "../ui/components/landingpage-components/AvailableFor
 import Instructions from "../ui/components/landingpage-components/Instructions";
 import Footer from "../ui/components/landingpage-components/Footer";
 
-export default function Home() {
+export default function Home({ params }) {
+  const { locale } = params;
   return (
     <div className="bg-gray-100">
-      <Navbar />
+      <Navbar locale={locale} />
       <Hero />
-      <SubHero />
+      <SubHero locale={locale} />
       <AvailableForms />
       <Instructions />
       <FAQ />

@@ -8,8 +8,9 @@ import { AiOutlineEye } from "react-icons/ai";
 import { useFormState } from "react-dom";
 import { LoginServerAction } from "@/app/lib/forms/login-server-action";
 import { GlobalBox } from "@/app/lib/constants/global-classes";
+import Link from "next/link";
 
-const LoginForm = (e) => {
+const LoginForm = ({ e, locale }) => {
   const [state, dispatch] = useActionState(LoginServerAction, undefined);
 
   const [email, setEmail] = useState("");
@@ -23,10 +24,11 @@ const LoginForm = (e) => {
     const found = Users.find(
       (u) => u.email === email && u.password === password
     );
+    console.log("Found user:", found);
 
     if (found) {
       if (found.role === "admin") {
-        router.push("/admin");
+        router.push("/" + locale + "/admin");
       } else if (found.role === "client") {
         router.push("/client");
       }
@@ -70,13 +72,14 @@ const LoginForm = (e) => {
               }
             />
           </div>
-
-          <button
-            type="submit"
-            className="w-full bg-brand-secondary text-white py-4 px-4 rounded-xl hover:bg-brand-primary transition"
-          >
-            Sign in
-          </button>
+          <Link href={"/" + locale + "/admin"}>
+            <button
+              type="submit"
+              className="w-full bg-brand-secondary text-white py-4 px-4 rounded-xl hover:bg-brand-primary transition"
+            >
+              Sign in
+            </button>
+          </Link>
         </form>
       </div>
     </div>

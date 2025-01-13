@@ -9,7 +9,7 @@ export default function AdminDashboard({ children, params }) {
       <AdminNavigation locale={locale} />
 
       <div className=" flex flex-col w-full  py-7 gap-4 pe-14 ">
-        <AdminHeader />
+        <AdminHeader locale={locale} />
 
         <main className=" ">
           <div className="w-full">{children}</div>

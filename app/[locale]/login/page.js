@@ -1,10 +1,12 @@
 import Link from "next/link";
 import LoginForm from "../../ui/authentication/LoginForm";
 
-function page() {
+function page({ params }) {
+  const { locale } = params;
+
   return (
     <div>
-      <LoginForm />
+      <LoginForm locale={locale} />
     </div>
   );
 }

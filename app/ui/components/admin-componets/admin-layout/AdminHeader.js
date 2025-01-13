@@ -8,7 +8,7 @@ import { GrLanguage } from "react-icons/gr";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
-function AdminHeader() {
+function AdminHeader({ locale }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
@@ -58,7 +58,7 @@ function AdminHeader() {
           >
             <GrLanguage size={20} />
             <div className=" absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 bg-brand-secondary text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center group-hover:bg-white group-hover:text-brand-secondary ">
-              <span className=" ">En</span>
+              <span className=" ">{locale === "fa" ? "Da" : locale}</span>
             </div>
           </div>
           {isDropdownOpen && (
